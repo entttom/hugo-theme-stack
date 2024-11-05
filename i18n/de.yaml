@@ -50,11 +50,11 @@ widget:
 
     tagCloud:
         title:
-            other: Schlagwörter
+            other: Bezirke
 
     categoriesCloud:
         title:
-            other: Kategorien
+            other: Modalität
 
 search:
     title:
@@ -68,7 +68,7 @@ search:
 
 footer:
     builtWith:
-        other: Erstellt mit {{ .Generator }}
+        other: 
 
     designedBy:
-        other: Theme {{ .Theme }} gestaltet von {{ .DesignedBy }}
+        other: 
