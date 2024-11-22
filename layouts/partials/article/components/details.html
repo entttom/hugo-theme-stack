@@ -2,10 +2,18 @@
     {{ if .Params.categories }}
     <header class="article-category">
         {{ range (.GetTerms "categories") }}
+        <a href="{{ .RelPermalink }}" {{ with .Params.style }}style="background-color: #fcba03!Important; color: {{ .color }};"{{ end }}>
+            {{ .LinkTitle }}
+            
+        </a>
+    {{ end }}    
+        {{ range (.GetTerms "tags") }}
             <a href="{{ .RelPermalink }}" {{ with .Params.style }}style="background-color: {{ .background }}; color: {{ .color }};"{{ end }}>
                 {{ .LinkTitle }}
+                
             </a>
         {{ end }}
+
     </header>
     {{ end }}
 
@@ -15,12 +23,24 @@
                 {{- .Title -}}
             </a>
         </h2>
-    
-        {{ with .Params.description }}
-        <h3 class="article-subtitle">
-            {{ . }}
-        </h3>
-        {{ end }}
+
+        
+        
+        <style type="text/css">
+            .tg  {border-collapse:collapse;border-spacing:0;}
+            .tg td{font-family:Arial, sans-serif;font-size:24px;padding:10px 5px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;text-align: center;}
+            .tg th{font-family:Arial, sans-serif;font-size:4px;font-weight:normal;padding:10px 5px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;text-align: center;}
+            </style>
+            <br>
+            
+            <div class="flex-container">
+                <div class="flex-items"> <a href="{{ .Params.maps }}">{{ .Params.adresse }}</a></div>
+                <div class="flex-items"> <a href="{{ .Params.maps }}">{{ .Params.plz }} {{ .Params.ort }}</a></div>
+                <br>
+                <div class="flex-items"><a href="tel: {{ .Params.tel }}">{{ .Params.tel }}</a></div>
+                <br>
+                <div class="flex-items"><a href="{{ .Params.website }}">{{ .Params.website }}</a></div>
+             </div>
     </div>
 
     {{ $showReadingTime := .Params.readingTime | default (.Site.Params.article.readingTime) }}
@@ -29,21 +49,11 @@
     {{ if $showFooter }}
     <footer class="article-time">
         {{ if $showDate }}
-            <div>
-                {{ partial "helper/icon" "date" }}
-                <time class="article-time--published">
-                    {{- .Date | time.Format (or .Site.Params.dateFormat.published "Jan 02, 2006") -}}
-                </time>
-            </div>
+
         {{ end }}
 
         {{ if $showReadingTime }}
-            <div>
-                {{ partial "helper/icon" "clock" }}
-                <time class="article-time--reading">
-                    {{ T "article.readingTime" .ReadingTime }}
-                </time>
-            </div>
+
         {{ end }}
     </footer>
     {{ end }}

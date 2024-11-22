@@ -50,11 +50,11 @@ widget:
 
     tagCloud:
         title:
-            other: Schlagwörter
+            other: Modalität
 
     categoriesCloud:
         title:
-            other: Kategorien
+            other: Bezirk
 
 search:
     title:
@@ -68,7 +68,7 @@ search:
 
 footer:
     builtWith:
-        other: ""
+        other:  "Dr."
 
     designedBy:
-        other: ""
+        other: "Entner"

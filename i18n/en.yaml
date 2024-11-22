@@ -50,10 +50,10 @@ widget:
 
     tagCloud:
         title:
-            other: Tags
+            other: Modality
     categoriesCloud:
         title:
-            other: Categories
+            other: District
 
 search:
     title:
