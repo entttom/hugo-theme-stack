@@ -2,7 +2,7 @@
     {{ if .Params.categories }}
     <header class="article-category">
         {{ range (.GetTerms "categories") }}
-        <a href="{{ .RelPermalink }}" {{ with .Params.style }}style="background-color: #fcba03!Important; color: {{ .color }};"{{ end }}>
+        <a href="{{ .RelPermalink }}" style="background-color: #8ea885!Important; color:;">
             {{ .LinkTitle }}
             
         </a>

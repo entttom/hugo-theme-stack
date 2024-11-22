@@ -48,30 +48,17 @@
         border-radius: 10px;
       }
       
-      .flex-items:nth-child(1) {
+      .flex-items {
         display: block;
         flex-grow: 0;
         flex-shrink: 1;
         flex-basis: auto;
         align-self: center;
         order: 0;
-      }
-      
-      .flex-items:nth-child(2) {
-        display: block;
-        flex-grow: 0;
-        flex-shrink: 1;
-        flex-basis: auto;
-        align-self: center;
-        order: 0;
-      }
-      
-      .flex-items:nth-child(3) {
-        display: block;
-        flex-grow: 0;
-        flex-shrink: 1;
-        flex-basis: auto;
-        align-self: center;
-        order: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: inline-block;
+        max-width: 75%;
       }
 </style>

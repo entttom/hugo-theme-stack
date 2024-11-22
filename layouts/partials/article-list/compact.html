@@ -7,16 +7,16 @@
                 {{- .Title -}}
             </a>
         </h2>
-       
-        <a href="tel: {{ .Params.tel }}">Tel</a>
+       <br>
+        <div class="flex-container">
+            <div class="flex-items"> <a href="{{ .Params.maps }}">{{ .Params.adresse }}</a></div>
+            <div class="flex-items"> <a href="{{ .Params.maps }}">{{ .Params.plz }} {{ .Params.ort }}</a></div>
+            <br>
+            <div class="flex-items"><a href="tel: {{ .Params.tel }}">{{ .Params.tel }}</a></div>
+            <br>
+            <div class="flex-items"><a href="{{ .Params.website }}">{{ .Params.website }}</a></div>
+         </div>
 
-        {{ with .Params.description }}
-        <h3 class="article-subtitle">
-            
-        {{ . }}
-        <a href="">Tel</a>
-        </h3>
-        {{ end }}
     </div>
 
     {{ $showReadingTime := .Params.readingTime | default (.Site.Params.article.readingTime) }}
@@ -45,3 +45,45 @@
         </footer>
     {{ end }}
 </div>
+<style>
+    .flex-container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: center;
+        align-content: center;
+        background-color: var(--body-background);
+        margin-left: 10%;
+        margin-right: 10%;
+        padding:10px;
+        border-radius: 10px;
+      }
+      
+      .flex-items:nth-child(1) {
+        display: block;
+        flex-grow: 0;
+        flex-shrink: 1;
+        flex-basis: auto;
+        align-self: center;
+        order: 0;
+      }
+      
+      .flex-items:nth-child(2) {
+        display: block;
+        flex-grow: 0;
+        flex-shrink: 1;
+        flex-basis: auto;
+        align-self: center;
+        order: 0;
+      }
+      
+      .flex-items:nth-child(3) {
+        display: block;
+        flex-grow: 0;
+        flex-shrink: 1;
+        flex-basis: auto;
+        align-self: center;
+        order: 0;
+      }
+</style>
